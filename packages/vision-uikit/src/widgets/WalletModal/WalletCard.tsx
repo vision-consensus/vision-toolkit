@@ -10,12 +10,13 @@ interface Props {
   walletConfig: Config;
   login: Login;
   onDismiss: () => void;
+  isDark?: boolean;
 }
 
 const WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: "16px" })`
   width:100%;
-  background: #FBFBFB;
-  border: 1px solid #FBFBFB;
+  background: ${({isDark}) => isDark ? '#1D1D1D' : '#FBFBFB'} ;
+  border: 1px solid ${({isDark}) => isDark ? '#1D1D1D' : '#FBFBFB'};
   border-radius: 10px;
   height: 60px;
   margin-bottom:14px;
@@ -27,7 +28,7 @@ const WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: 
   padding: 10px 20px;
   box-shadow:none;
   &:hover{
-    border: 1px solid #9669EC;
+    border: 1px solid ${({isDark}) => isDark ? '#3C14AF' : '#9669EC'};
   }
 `;
 
@@ -43,11 +44,12 @@ export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({ t, ...props }) =
   );
 };
 
-const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
+const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, isDark }) => {
   const { title, icon: Icon } = walletConfig;
-
+  console.log(isDark, 2222)
   return (
     <WalletButton
+      isDark={isDark}
       variant="tertiary"
       onClick={() => {
         // @ts-ignore
@@ -67,7 +69,7 @@ const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss }) => {
       id={`wallet-connect-${title.toLocaleLowerCase()}`}
     >
       <Icon width="26px" />
-      <Text fontSize="16px" color="#000">{title}</Text>
+      <Text fontSize="16px" color={isDark ? '#FFFFFF' : '#000000'}>{title}</Text>
     </WalletButton>
   );
 };

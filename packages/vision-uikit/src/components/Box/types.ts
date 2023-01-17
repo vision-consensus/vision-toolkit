@@ -15,7 +15,9 @@ export interface BoxProps
     LayoutProps,
     PositionProps,
     SpaceProps,
-    HTMLAttributes<HTMLDivElement> {}
+    HTMLAttributes<HTMLDivElement> {
+      isDark?: boolean
+    }
 
 export interface FlexProps extends BoxProps, FlexboxProps {}
 

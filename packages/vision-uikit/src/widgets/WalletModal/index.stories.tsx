@@ -21,15 +21,23 @@ export const Wallet: React.FC = () => {
     },
 
   ];
-  const { onPresentConnectModal } = useWalletModal(
-    () => null,
-    () => null,
-    '',
-    connectors,
-  );
+  const { onPresentConnectModal } = useWalletModal({
+    login: () => null,
+    logout: () => null,
+    title: '',
+    walletList: connectors,
+  });
+  const { onPresentConnectModal: onPresentConnectModalDark } = useWalletModal({
+    login: () => null,
+    logout: () => null,
+    title: '',
+    walletList: connectors,
+    isDark: true
+  });
   return (
     <Flex>
-      <Button onClick={onPresentConnectModal}>Open connect modal</Button>
+      <Button onClick={onPresentConnectModal}>Open connect modal(light)</Button>
+      <Button onClick={onPresentConnectModalDark}>Open connect modal(dark)</Button>
     </Flex>
   );
 };

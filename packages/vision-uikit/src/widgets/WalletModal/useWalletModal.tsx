@@ -7,8 +7,15 @@ interface ReturnType {
   onPresentConnectModal: () => void;
 }
 
-const useWalletModal = (login: Login, logout: () => void, title?: string, walletList?: Config[], cover?: boolean): ReturnType => {
-  const [onPresentConnectModal] = useModal(<ConnectModal login={login} title={title} walletList={walletList} cover={cover} />);
+const useWalletModal = ({
+  login,
+  logout,
+  title,
+  walletList,
+  cover,
+  isDark
+}: {login: Login, logout: () => void, title?: string, walletList?: Config[], cover?: boolean, isDark?: boolean}): ReturnType => {
+  const [onPresentConnectModal] = useModal(<ConnectModal login={login} title={title} walletList={walletList} cover={cover} isDark={isDark} />);
   return { onPresentConnectModal };
 };
 

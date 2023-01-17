@@ -15,12 +15,14 @@ interface Props {
   title?: string;
   walletList?: Config[];
   cover?: boolean;
+  isDark?: boolean;
 }
 
 const WalletWrapper = styled(Box)`
   border-bottom:1px solid rgba(153,162,174,0.2);
   padding:24px 28px;
   width:100%;
+  
 
 `;
 
@@ -50,24 +52,24 @@ const getPreferredConfig = (walletConfig: Config[]) => {
   ];
 };
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, title, cover, walletList }) => {
+const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, title, cover, walletList, isDark = false }) => {
   const displayConfig = cover && walletList ? walletList : walletList ? config.concat(walletList) : config;
   const sortedConfig = getPreferredConfig(displayConfig);
   const { isMobile } = useMatchBreakpoints();
-
+  console.log(isDark, 111111)
   return (
     <ModalContainer minWidth={isMobile ? '320px' : '510px'}>
-      <ModalHeader>
+      <ModalHeader background={isDark ? '#1F1F1F' : '#F4F3F8'}>
         <ModalTitle>
-          <Heading fontSize="20px">{title || 'Connect Wallet'}</Heading>
+          <Heading fontSize="20px" color={isDark ? '#FFFFFF' : '#000000'} >{title || 'Connect Wallet'}</Heading>
         </ModalTitle>
-        <ModalCloseButton onDismiss={onDismiss} />
+        <ModalCloseButton isDark={isDark} onDismiss={onDismiss} />
       </ModalHeader>
-      <ModalBody >
+      <ModalBody isDark={isDark} >
         <WalletWrapper>
           {sortedConfig.map((wallet) => (
             <Box key={wallet.title}>
-              <WalletCard walletConfig={wallet} login={login} onDismiss={onDismiss} />
+              <WalletCard isDark={isDark} walletConfig={wallet} login={login} onDismiss={onDismiss} />
             </Box>
           ))}
         </WalletWrapper>

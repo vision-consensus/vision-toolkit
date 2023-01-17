@@ -9,7 +9,7 @@ import { ModalProps } from "./types";
 export const ModalHeader = styled.div<{ background?: string }>`
   align-items: center;
   /* background: ${({ theme }) => theme.isDark ? '#202839' : '#F4F3F8'}; */
-  background: #F4F3F8;
+  background: ${({ background }) => background};
   display: flex;
   padding: 12px 24px;
   border-radius: 20px 20px 0 0;
@@ -21,21 +21,20 @@ export const ModalTitle = styled(Flex)`
   align-items: center;
   flex: 1;
 `;
-
 export const ModalBody = styled(Flex)`
   flex-direction: column;
   max-height: 90vh;
   overflow-y: auto;
-  background: #ffffff;
+  background: ${({isDark}) => isDark ? '#121212' : '#ffffff'} ;
   margin: 0px 1px 1px;
     overflow: hidden;
     border-radius: 0 0 20px 20px;
 `;
 
-export const ModalCloseButton: React.FC<{ onDismiss: ModalProps["onDismiss"] }> = ({ onDismiss }) => {
+export const ModalCloseButton: React.FC<{ onDismiss: ModalProps["onDismiss"], isDark?: boolean }> = ({ onDismiss, isDark }) => {
   return (
     <IconButton variant="text" onClick={onDismiss} style={{marginRight: '-24px'}} aria-label="Close the dialog">
-      <CloseNoWithCircleIcon color="#000" width={32} style={{ marginTop: '20px' }} />
+      <CloseNoWithCircleIcon color={isDark ? '#fff' : '#000'} width={32} style={{ marginTop: '20px' }} />
     </IconButton>
   );
 };
