@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
 import useWalletModal from "./useWalletModal";
 import WalletConnect from "../../components/Svg/Icons/WalletConnect";
+import { useVisionweb } from '../../hooks';
 
 import { Config, ConnectorNames } from "./types";
 
@@ -12,6 +13,9 @@ export default {
 };
 
 export const Wallet: React.FC = () => {
+  const { visionWeb, account, chainId } = useVisionweb();
+  console.log(visionWeb, account, chainId);
+
   const connectors: Config[] = [
     {
       title: "WalletConnect",
