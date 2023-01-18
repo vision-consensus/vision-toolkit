@@ -1,4 +1,4 @@
-# 🥞 Vision UIkit
+# Vision UIkit
 
 [![Version](https://img.shields.io/npm/v/vision-uikit)](https://www.npmjs.com/package/vision-uikit) [![Size](https://img.shields.io/bundlephobia/min/vision-uikit)](https://www.npmjs.com/package/vision-uikit)
 
