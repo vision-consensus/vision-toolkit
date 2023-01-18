@@ -46,7 +46,6 @@ export const MoreWalletCard: React.FC<MoreWalletCardProps> = ({ t, ...props }) =
 
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, isDark }) => {
   const { title, icon: Icon } = walletConfig;
-  console.log(isDark, 2222)
   return (
     <WalletButton
       isDark={isDark}

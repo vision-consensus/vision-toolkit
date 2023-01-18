@@ -56,7 +56,6 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, title, c
   const displayConfig = cover && walletList ? walletList : walletList ? config.concat(walletList) : config;
   const sortedConfig = getPreferredConfig(displayConfig);
   const { isMobile } = useMatchBreakpoints();
-  console.log(isDark, 111111)
   return (
     <ModalContainer minWidth={isMobile ? '320px' : '510px'}>
       <ModalHeader background={isDark ? '#1F1F1F' : '#F4F3F8'}>

@@ -14,7 +14,6 @@ export default {
 
 export const Wallet: React.FC = () => {
   const { visionWeb, account, chainId } = useVisionweb();
-  console.log(visionWeb, account, chainId);
 
   const connectors: Config[] = [
     {
