@@ -1,14 +1,14 @@
 {
-  "name": "vanswap-uikit",
-  "version": "2.6.4",
-  "description": "Set of UI components for vanswap projects",
+  "name": "vision-uikit",
+  "version": "0.1.0",
+  "description": "Set of UI components for vision projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/moondogeswap/vanswap-toolkit/tree/master/packages/vanswap-uikit",
+  "repository": "https://github.com/vision-consensus/vision-toolkit/tree/develop/packages/vision-uikit",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",

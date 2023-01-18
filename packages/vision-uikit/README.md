@@ -1,32 +1,22 @@
-# 🥞 VanSwap UIkit
+# 🥞 Vision UIkit
 
-[![Version](https://img.shields.io/npm/v/vanswap-uikit)](https://www.npmjs.com/package/vanswap-uikit) [![Size](https://img.shields.io/bundlephobia/min/vanswap-uikit)](https://www.npmjs.com/package/vanswap-uikit)
+[![Version](https://img.shields.io/npm/v/vision-uikit)](https://www.npmjs.com/package/vision-uikit) [![Size](https://img.shields.io/bundlephobia/min/vision-uikit)](https://www.npmjs.com/package/vision-uikit)
 
-VanSwap UIkit is a set of React components and hooks used to build pages on VanSwap's apps. It also contains a theme file for dark and light mode.
+Vision UIkit is a set of React components and hooks used to build pages on Vision's apps. It also contains dark and light mode.
 
 ## Install
 
-`yarn add vanswap-uikit`
+`yarn add vision-uikit`
 
 ## Setup
 
-### Theme
-
-Before using VanSwap UIkit, you need to provide the theme file to styled-component.
-
-```
-import { ThemeProvider } from 'styled-components'
-import { light, dark } from 'vanswap-uikit'
-...
-<ThemeProvider theme={isDark}>...</ThemeProvider>
-```
 
 ### Reset
 
 A reset CSS is available as a global styled component.
 
 ```
-import { ResetCSS } from 'vanswap-uikit'
+import { ResetCSS } from 'vision-uikit'
 ...
 <ResetCSS />
 ```
