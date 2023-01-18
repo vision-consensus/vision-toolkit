@@ -1,7 +1,6 @@
 import { SVGAttributes } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { SpaceProps } from "styled-system";
-import { Colors } from "../../theme";
 
 export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
   theme?: DefaultTheme;
@@ -14,7 +13,7 @@ export type IconComponentType = {
   height?: string;
   width?: string;
   activeColor?: string;
-  activeBackgroundColor?: keyof Colors;
+  activeBackgroundColor?: string;
 } & SvgProps;
 
 export const StyledIconImage = styled.img`
