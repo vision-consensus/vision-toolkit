@@ -1,2 +1,2 @@
 export { default as useMatchBreakpoints } from "./useMatchBreakpoints";
-export { useVisionweb } from "./useVisionweb";
+export { default as useVisionweb } from "./useVisionweb";

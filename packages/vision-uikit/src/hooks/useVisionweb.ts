@@ -51,3 +51,5 @@ export function useVisionweb() {
     chainId
   } 
 }
+
+export default useVisionweb
